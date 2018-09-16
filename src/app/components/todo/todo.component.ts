@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TodoStorageService} from '../../services/todo-storage.service';
 
 @Component({
   selector: 'app-todo',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+  todos: string[];
 
-  constructor() { }
+  constructor(private todoStorage: TodoStorageService) {
+  }
 
   ngOnInit() {
+    this.todos = this.todoStorage.getTodos();
+    console.log(this.todos);
   }
 
 }

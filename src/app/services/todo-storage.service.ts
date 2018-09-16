@@ -10,6 +10,11 @@ export class TodoStorageService {
   }
 
   addTodo(todoString) {
-    this.todos.push(todoString);
+    if (todoString !== '') {
+      this.todos = [...this.todos, todoString];
+    }
+  }
+  getTodos() {
+    return this.todos;
   }
 }
