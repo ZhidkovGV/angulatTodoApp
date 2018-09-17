@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs/index';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,10 @@ export class TodoStorageService {
 
   addTodo(todoString) {
     if (todoString !== '') {
-      this.todos = [...this.todos, todoString];
+      this.todos.push(todoString);
     }
   }
-  getTodos() {
-    return this.todos;
+  getTodos(): Observable<string[]> {
+    return of(this.todos);
   }
 }

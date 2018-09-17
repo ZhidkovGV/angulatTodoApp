@@ -12,5 +12,6 @@ export class AddTodoItemComponent {
 
   addNewTodo(input: HTMLInputElement) {
     this.storageService.addTodo(input.value);
+    input.value = '';
   }
 }

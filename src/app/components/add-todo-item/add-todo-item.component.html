@@ -1,5 +1,6 @@
 <div>
   <span>Add new todo</span>
-  <input placeholder="new todo" #input (keyup.enter)="addNewTodo(input)">
+  <input placeholder="new todo" #input (keyup.enter)="addNewTodo(input)" autofocus>
+
   <button (click)="addNewTodo(input)">Add</button>
 </div>

@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todos = this.todoStorage.getTodos();
+    this.todoStorage.getTodos().subscribe((todos) => this.todos = todos);
     console.log(this.todos);
   }
 
